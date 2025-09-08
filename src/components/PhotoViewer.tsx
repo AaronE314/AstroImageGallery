@@ -1,6 +1,7 @@
 import { useEffect, useCallback } from "react";
 import type { PhotoData, IntegrationTime } from "../types/PhotoData";
 import styles from "../styles/PhotoViewer.module.css";
+import { getAssetPath } from "../utils/assetPath";
 
 interface PhotoViewerProps {
   photos: PhotoData[];
@@ -71,7 +72,7 @@ const PhotoViewer = ({
             onClick={(e) => e.stopPropagation()}
           >
             <img
-              src={`/images/${currentPhoto.fileName}`}
+              src={getAssetPath(`/images/${currentPhoto.fileName}`)}
               alt={currentPhoto.objectName}
             />
             <div className={styles.photoDetails}>

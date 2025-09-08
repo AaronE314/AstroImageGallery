@@ -7,7 +7,7 @@ import type { PhotoData } from "./types/PhotoData";
 
 function App() {
   return (
-    <Router>
+    <Router basename="/AstroImageGallery">
       <div className="app">
         <nav>
           <Link to="/">Gallery</Link>
