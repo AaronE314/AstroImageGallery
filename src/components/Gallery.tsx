@@ -72,7 +72,7 @@ const Gallery = ({ photos }: GalleryProps) => {
             onClick={() => setSelectedPhotoIndex(index)}
           >
             <img
-              src={`/images/${photo.fileName}`}
+              src={`./images/${photo.fileName}`}
               alt={photo.objectName}
               loading="lazy"
             />

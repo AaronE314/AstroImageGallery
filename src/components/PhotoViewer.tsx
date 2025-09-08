@@ -72,7 +72,7 @@ const PhotoViewer = ({
             onClick={(e) => e.stopPropagation()}
           >
             <img
-              src={getAssetPath(`/images/${currentPhoto.fileName}`)}
+              src={`./images/${currentPhoto.fileName}`}
               alt={currentPhoto.objectName}
             />
             <div className={styles.photoDetails}>
