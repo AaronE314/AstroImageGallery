@@ -1,7 +1,6 @@
 import { useEffect, useCallback } from "react";
 import type { PhotoData, IntegrationTime } from "../types/PhotoData";
 import styles from "../styles/PhotoViewer.module.css";
-import { getAssetPath } from "../utils/assetPath";
 
 interface PhotoViewerProps {
   photos: PhotoData[];
