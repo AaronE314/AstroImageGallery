@@ -1,0 +1,124 @@
+{
+  "photos": [
+    {
+      "id": "1",
+      "title": "M31 - Andromeda Galaxy",
+      "description": "The Andromeda Galaxy, also known as M31, is the nearest spiral galaxy to the Milky Way and is on a collision course with our galaxy in about 4.5 billion years.",
+      "fileName": "/M31_Ha_blue.jpg",
+      "objectName": "M31",
+      "date": "2025-09-01",
+      "integrationTimes": {
+        "L": {
+          "numberOfPhotos": 129,
+          "timePerPhoto": 40
+        },
+        "R": {
+          "numberOfPhotos": 39,
+          "timePerPhoto": 60
+        },
+        "G": {
+          "numberOfPhotos": 39,
+          "timePerPhoto": 60
+        },
+        "B": {
+          "numberOfPhotos": 38,
+          "timePerPhoto": 60
+        },
+        "Ha": {
+          "numberOfPhotos": 39,
+          "timePerPhoto": 300
+        }
+      },
+      "equipment": {
+        "mount": "Sky-Watcher Star Adventurer GTI",
+        "camera": "QHY MiniCam 8",
+        "telescope": "Askar 71f",
+        "filters": [
+          "Luminance",
+          "Red",
+          "Green",
+          "Blue",
+          "Ha"
+        ]
+      }
+    },
+    {
+      "id": "1757283805582",
+      "title": "IC 1396 - Elephant's Trunk Nebula",
+      "fileName": "Elephant's_Trunk_Nebula_Final.jpg",
+      "objectName": "IC 1396 - Elephant's Trunk Nebula",
+      "date": "2025-07-24",
+      "integrationTimes": {
+        "Ha": {
+          "numberOfPhotos": 19,
+          "timePerPhoto": 300
+        },
+        "Oiii": {
+          "numberOfPhotos": 26,
+          "timePerPhoto": 300
+        },
+        "Sii": {
+          "numberOfPhotos": 25,
+          "timePerPhoto": 299
+        }
+      },
+      "equipment": {
+        "telescope": "Askar 71f",
+        "camera": "QHY MiniCam 8",
+        "mount": "Sky-Watcher Star Adventurer GTI",
+        "filters": [
+          "Ha",
+          "Oiii",
+          "Sii"
+        ]
+      }
+    },
+    {
+      "id": "1757292425471",
+      "title": "NGC 7000 - North America Nebula",
+      "fileName": "north_america_nebula.jpg",
+      "objectName": "NGC 7000 - North America Nebula",
+      "date": "2025-06-29",
+      "integrationTimes": {
+        "OSC": {
+          "numberOfPhotos": 256,
+          "timePerPhoto": 89
+        }
+      },
+      "equipment": {
+        "telescope": "Askar 71f",
+        "camera": "Cannon T7",
+        "mount": "Sky-Watcher Star Adventurer GTI",
+        "filters": [
+          "OSC"
+        ]
+      }
+    },
+    {
+      "id": "1757292614007",
+      "title": "NGC 6992 - Eastern Veil Nebula",
+      "fileName": "Veil_Nebula_DHOO.jpg",
+      "objectName": "NGC 6992 - Eastern Veil Nebula",
+      "date": "2025-08-01",
+      "integrationTimes": {
+        "Ha": {
+          "numberOfPhotos": 25,
+          "timePerPhoto": 180
+        },
+        "Oiii": {
+          "numberOfPhotos": 23,
+          "timePerPhoto": 180
+        }
+      },
+      "equipment": {
+        "telescope": "Askar 71f",
+        "camera": "QHY MiniCam 8",
+        "mount": "Sky-Watcher Star Adventurer GTI",
+        "filters": [
+          "Ha",
+          "Oiii"
+        ]
+      }
+    }
+  ]
+}
