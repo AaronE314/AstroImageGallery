@@ -31,8 +31,20 @@ const PhotoViewer = ({
         }
       }
     },
-    [currentIndex, onClose, onNavigate, photos.length]
+    [currentIndex, photos.length, onClose, onNavigate]
   );
+
+  const handleTouchArea = (
+    e: React.MouseEvent,
+    direction: "left" | "right"
+  ) => {
+    e.stopPropagation();
+    if (direction === "left" && currentIndex > 0) {
+      onNavigate(currentIndex - 1);
+    } else if (direction === "right" && currentIndex < photos.length - 1) {
+      onNavigate(currentIndex + 1);
+    }
+  };
 
   useEffect(() => {
     document.addEventListener("keydown", handleKeyPress);
@@ -51,66 +63,78 @@ const PhotoViewer = ({
   return (
     <div className={styles.viewer}>
       <div className={styles.overlay} onClick={onClose}>
-        <button className={styles.closeButton}>×</button>
+        <button className={styles.closeButton}>&times;</button>
 
-        <div className={styles.navigation}>
-          {currentIndex > 0 && (
+        <div className={styles.contentWrapper}>
+          <div className={styles.navigation}>
             <button
-              className={styles.navButton}
+              className={`${styles.navButton} ${
+                currentIndex <= 0 ? styles.hidden : ""
+              }`}
               onClick={(e) => {
                 e.stopPropagation();
-                onNavigate(currentIndex - 1);
+                if (currentIndex > 0) onNavigate(currentIndex - 1);
               }}
             >
               &lt;
             </button>
-          )}
 
-          <div
-            className={styles.photoContainer}
-            onClick={(e) => e.stopPropagation()}
-          >
-            <img
-              src={`./images/${currentPhoto.fileName}`}
-              alt={currentPhoto.objectName}
-            />
-            <div className={styles.photoDetails}>
-              <h2>{currentPhoto.objectName}</h2>
-              <p>Date: {new Date(currentPhoto.date).toLocaleDateString()}</p>
-              <p>Filters: {currentPhoto.equipment.filters.join(", ")}</p>
-
-              <div className={styles.integrationTimes}>
-                <h3>Integration Times:</h3>
-                {Object.entries(currentPhoto.integrationTimes).map(
-                  ([filter, time]) =>
-                    time && (
-                      <p key={filter}>
-                        {filter}: {formatIntegrationTime(time)}
-                      </p>
-                    )
-                )}
-              </div>
-
-              <div className={styles.equipment}>
-                <h3>Equipment:</h3>
-                <p>Telescope: {currentPhoto.equipment.telescope}</p>
-                <p>Camera: {currentPhoto.equipment.camera}</p>
-                <p>Mount: {currentPhoto.equipment.mount}</p>
-              </div>
+            <div
+              className={styles.photoContainer}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div
+                className={styles.touchAreaLeft}
+                onClick={(e) => handleTouchArea(e, "left")}
+              />
+              <img
+                src={`./images/${currentPhoto.fileName}`}
+                alt={currentPhoto.objectName}
+              />
+              <div
+                className={styles.touchAreaRight}
+                onClick={(e) => handleTouchArea(e, "right")}
+              />
             </div>
-          </div>
 
-          {currentIndex < photos.length - 1 && (
             <button
-              className={styles.navButton}
+              className={`${styles.navButton} ${
+                currentIndex >= photos.length - 1 ? styles.hidden : ""
+              }`}
               onClick={(e) => {
                 e.stopPropagation();
-                onNavigate(currentIndex + 1);
+                if (currentIndex < photos.length - 1)
+                  onNavigate(currentIndex + 1);
               }}
             >
               &gt;
             </button>
-          )}
+          </div>
+
+          <div className={styles.photoDetails}>
+            <h2>{currentPhoto.objectName}</h2>
+            <p>Date: {new Date(currentPhoto.date).toLocaleDateString()}</p>
+            <p>Filters: {currentPhoto.equipment.filters.join(", ")}</p>
+
+            <div className={styles.integrationTimes}>
+              <h3>Integration Times:</h3>
+              {Object.entries(currentPhoto.integrationTimes).map(
+                ([filter, time]) =>
+                  time && (
+                    <p key={filter}>
+                      {filter}: {formatIntegrationTime(time)}
+                    </p>
+                  )
+              )}
+            </div>
+
+            <div className={styles.equipment}>
+              <h3>Equipment:</h3>
+              <p>Telescope: {currentPhoto.equipment.telescope}</p>
+              <p>Camera: {currentPhoto.equipment.camera}</p>
+              <p>Mount: {currentPhoto.equipment.mount}</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
