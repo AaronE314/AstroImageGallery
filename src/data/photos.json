@@ -5,7 +5,7 @@
       "title": "M31 - Andromeda Galaxy",
       "description": "The Andromeda Galaxy, also known as M31, is the nearest spiral galaxy to the Milky Way and is on a collision course with our galaxy in about 4.5 billion years.",
       "fileName": "/M31_Ha_blue.jpg",
-      "objectName": "M31",
+      "objectName": "M31 - Andromeda Galaxy",
       "date": "2025-09-01",
       "integrationTimes": {
         "L": {
@@ -117,6 +117,324 @@
         "filters": [
           "Ha",
           "Oiii"
+        ]
+      }
+    },
+    {
+      "id": "1757365816484",
+      "title": "NGC 7331",
+      "fileName": "NGC7331_zoom_highlighted_supernova.jpg",
+      "objectName": "NGC 7331",
+      "date": "2025-08-31",
+      "integrationTimes": {
+        "B": {
+          "numberOfPhotos": 34,
+          "timePerPhoto": 60
+        },
+        "G": {
+          "numberOfPhotos": 34,
+          "timePerPhoto": 60
+        },
+        "L": {
+          "numberOfPhotos": 100,
+          "timePerPhoto": 40
+        },
+        "R": {
+          "numberOfPhotos": 34,
+          "timePerPhoto": 60
+        }
+      },
+      "equipment": {
+        "telescope": "Askar 71f",
+        "camera": "QHY MiniCam 8",
+        "mount": "Sky-Watcher Star Adventurer GTI",
+        "filters": [
+          "Luminance",
+          "Red",
+          "Green",
+          "Blue"
+        ]
+      }
+    },
+    {
+      "id": "1757365919793",
+      "title": "M53",
+      "fileName": "m53_final.jpg",
+      "objectName": "M53",
+      "date": "2025-05-08",
+      "integrationTimes": {
+        "OSC": {
+          "numberOfPhotos": 86,
+          "timePerPhoto": 90
+        }
+      },
+      "equipment": {
+        "telescope": "Askar 71f",
+        "camera": "Cannon T7",
+        "mount": "Sky-Watcher Star Adventurer GTI",
+        "filters": [
+          "OSC"
+        ]
+      }
+    },
+    {
+      "id": "1757365972510",
+      "title": "M13",
+      "fileName": "M13.jpg",
+      "objectName": "M13",
+      "date": "2025-05-09",
+      "integrationTimes": {
+        "OSC": {
+          "numberOfPhotos": 63,
+          "timePerPhoto": 90
+        }
+      },
+      "equipment": {
+        "telescope": "Askar 71f",
+        "camera": "Cannon T7",
+        "mount": "Sky-Watcher Star Adventurer GTI",
+        "filters": [
+          "OSC"
+        ]
+      }
+    },
+    {
+      "id": "1757366078986",
+      "title": "M16 - Eagle Nebula",
+      "fileName": "eagle_draft.jpg",
+      "objectName": "M16 - Eagle Nebula",
+      "date": "2025-07-28",
+      "integrationTimes": {
+        "Ha": {
+          "numberOfPhotos": 4,
+          "timePerPhoto": 90
+        },
+        "Oiii": {
+          "numberOfPhotos": 8,
+          "timePerPhoto": 90
+        },
+        "Sii": {
+          "numberOfPhotos": 10,
+          "timePerPhoto": 89
+        }
+      },
+      "equipment": {
+        "telescope": "Askar 71f",
+        "camera": "QHY MiniCam 8",
+        "mount": "Sky-Watcher Star Adventurer GTI",
+        "filters": [
+          "Sii",
+          "Ha",
+          "Oiii"
+        ]
+      }
+    },
+    {
+      "id": "1757366186998",
+      "title": "M27 - Dumbbell Nebula",
+      "fileName": "dumbbell_nebula.jpg",
+      "objectName": "M27 - Dumbbell Nebula",
+      "date": "2025-07-31",
+      "integrationTimes": {
+        "Ha": {
+          "numberOfPhotos": 20,
+          "timePerPhoto": 90
+        },
+        "Oiii": {
+          "numberOfPhotos": 19,
+          "timePerPhoto": 90
+        },
+        "Sii": {
+          "numberOfPhotos": 20,
+          "timePerPhoto": 90
+        }
+      },
+      "equipment": {
+        "telescope": "Askar 71f",
+        "camera": "QHY MiniCam 8",
+        "mount": "Sky-Watcher Star Adventurer GTI",
+        "filters": [
+          "Sii",
+          "Ha",
+          "Oiii"
+        ]
+      }
+    },
+    {
+      "id": "1757366263907",
+      "title": "NGC 6888 - Crecent Nebula",
+      "fileName": "Crescent_Nebula.jpg",
+      "objectName": "NGC 6888 - Crecent Nebula",
+      "date": "2025-07-03",
+      "integrationTimes": {
+        "OSC": {
+          "numberOfPhotos": 81,
+          "timePerPhoto": 90
+        }
+      },
+      "equipment": {
+        "telescope": "Askar 71f",
+        "camera": "Cannon T7",
+        "mount": "Sky-Watcher Star Adventurer GTI",
+        "filters": [
+          "OSC"
+        ]
+      }
+    },
+    {
+      "id": "1757366351436",
+      "title": "NGC 7635 - Bubble Nebula",
+      "fileName": "bubble_nebula_draft.jpg",
+      "objectName": "NGC 7635 - Bubble Nebula",
+      "date": "2025-07-28",
+      "integrationTimes": {
+        "Ha": {
+          "numberOfPhotos": 9,
+          "timePerPhoto": 90
+        },
+        "Oiii": {
+          "numberOfPhotos": 18,
+          "timePerPhoto": 90
+        },
+        "Sii": {
+          "numberOfPhotos": 19,
+          "timePerPhoto": 90
+        }
+      },
+      "equipment": {
+        "telescope": "Askar 71f",
+        "camera": "QHY MiniCam 8",
+        "mount": "Sky-Watcher Star Adventurer GTI",
+        "filters": [
+          "Sii",
+          "Ha",
+          "Oiii"
+        ]
+      }
+    },
+    {
+      "id": "1757380383553",
+      "title": "Markarian's Chain (A galaxy cluster)",
+      "fileName": "Markarians_Chain.jpg",
+      "objectName": "Markarian's Chain (A galaxy cluster)",
+      "date": "2025-04-22",
+      "integrationTimes": {
+        "OSC": {
+          "numberOfPhotos": 69,
+          "timePerPhoto": 89
+        }
+      },
+      "equipment": {
+        "telescope": "Askar 71f",
+        "camera": "Cannon T7",
+        "mount": "Sky-Watcher Star Adventurer GTI",
+        "filters": [
+          "OSC"
+        ]
+      }
+    },
+    {
+      "id": "1757380457730",
+      "title": "M66 Group - Leo Triplet",
+      "fileName": "leo_triplet_Final.jpg",
+      "objectName": "M66 Group - Leo Triplet",
+      "date": "2025-04-16",
+      "integrationTimes": {
+        "OSC": {
+          "numberOfPhotos": 100,
+          "timePerPhoto": 90
+        }
+      },
+      "equipment": {
+        "telescope": "Askar 71f",
+        "camera": "Cannon T7",
+        "mount": "Sky-Watcher Star Adventurer GTI",
+        "filters": [
+          "OSC"
+        ]
+      }
+    },
+    {
+      "id": "1757380548168",
+      "title": "M101 - Pinwheel Galaxy",
+      "fileName": "M101.jpg",
+      "objectName": "M101 - Pinwheel Galaxy",
+      "date": "2025-05-08",
+      "integrationTimes": {
+        "OSC": {
+          "numberOfPhotos": 99,
+          "timePerPhoto": 90
+        }
+      },
+      "equipment": {
+        "telescope": "Askar 71f",
+        "camera": "Cannon T7",
+        "mount": "Sky-Watcher Star Adventurer GTI",
+        "filters": [
+          "OSC"
+        ]
+      }
+    },
+    {
+      "id": "1757380802887",
+      "title": "M81 & M82 - Bode's and Cigar galaxies",
+      "fileName": "bodes_and_cigar_croped.jpg",
+      "objectName": "M81 & M82 - Bode's and Cigar galaxies",
+      "date": "2025-03-10",
+      "integrationTimes": {
+        "OSC": {
+          "numberOfPhotos": 239,
+          "timePerPhoto": 30
+        }
+      },
+      "equipment": {
+        "telescope": "Askar 71f",
+        "camera": "Cannon T7",
+        "mount": "Sky-Watcher Star Adventurer GTI",
+        "filters": [
+          "OSC"
+        ]
+      }
+    },
+    {
+      "id": "1757381050428",
+      "title": "M51 - Whirlpool Galaxy",
+      "fileName": "m51.jpg",
+      "objectName": "M51 - Whirlpool Galaxy",
+      "date": "2025-07-14",
+      "integrationTimes": {
+        "OSC": {
+          "numberOfPhotos": 9,
+          "timePerPhoto": 180
+        }
+      },
+      "equipment": {
+        "telescope": "Askar 71f",
+        "camera": "Cannon T7",
+        "mount": "Sky-Watcher Star Adventurer GTI",
+        "filters": [
+          "OSC"
+        ]
+      }
+    },
+    {
+      "id": "1757381707344",
+      "title": "M42 - Orion Nebula",
+      "fileName": "M42.jpg",
+      "objectName": "M42 - Orion Nebula",
+      "date": "2024-12-21",
+      "integrationTimes": {
+        "OSC": {
+          "numberOfPhotos": 154,
+          "timePerPhoto": 10
+        }
+      },
+      "equipment": {
+        "telescope": "Askar 71f",
+        "camera": "Cannon T7",
+        "mount": "Sky-Watcher Star Adventurer GTI",
+        "filters": [
+          "OSC"
         ]
       }
     }
