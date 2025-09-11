@@ -116,17 +116,19 @@ const PhotoViewer = ({
             <p>Date: {new Date(currentPhoto.date).toLocaleDateString()}</p>
             <p>Filters: {currentPhoto.equipment.filters.join(", ")}</p>
 
-            <div className={styles.integrationTimes}>
-              <h3>Integration Times:</h3>
-              {Object.entries(currentPhoto.integrationTimes).map(
-                ([filter, time]) =>
-                  time && (
-                    <p key={filter}>
-                      {filter}: {formatIntegrationTime(time)}
-                    </p>
-                  )
-              )}
-            </div>
+            {currentPhoto.integrationTimes ? (
+              <div className={styles.integrationTimes}>
+                <h3>Integration Times:</h3>
+                {Object.entries(currentPhoto.integrationTimes).map(
+                  ([filter, time]) =>
+                    time && (
+                      <p key={filter}>
+                        {filter}: {formatIntegrationTime(time)}
+                      </p>
+                    )
+                )}
+              </div>
+            ) : null}
 
             <div className={styles.equipment}>
               <h3>Equipment:</h3>

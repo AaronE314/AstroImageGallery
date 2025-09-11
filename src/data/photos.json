@@ -7,6 +7,7 @@
       "fileName": "/M31_Ha_blue.jpg",
       "objectName": "M31 - Andromeda Galaxy",
       "date": "2025-09-01",
+      "type": "DSO",
       "integrationTimes": {
         "L": {
           "numberOfPhotos": 129,
@@ -48,6 +49,7 @@
       "fileName": "Elephant's_Trunk_Nebula_Final.jpg",
       "objectName": "IC 1396 - Elephant's Trunk Nebula",
       "date": "2025-07-24",
+      "type": "DSO",
       "integrationTimes": {
         "Ha": {
           "numberOfPhotos": 19,
@@ -79,6 +81,7 @@
       "fileName": "north_america_nebula.jpg",
       "objectName": "NGC 7000 - North America Nebula",
       "date": "2025-06-29",
+      "type": "DSO",
       "integrationTimes": {
         "OSC": {
           "numberOfPhotos": 256,
@@ -100,6 +103,7 @@
       "fileName": "Veil_Nebula_DHOO.jpg",
       "objectName": "NGC 6992 - Eastern Veil Nebula",
       "date": "2025-08-01",
+      "type": "DSO",
       "integrationTimes": {
         "Ha": {
           "numberOfPhotos": 25,
@@ -125,6 +129,7 @@
       "title": "NGC 7331",
       "fileName": "NGC7331_zoom_highlighted_supernova.jpg",
       "objectName": "NGC 7331",
+      "type": "DSO",
       "date": "2025-08-31",
       "integrationTimes": {
         "B": {
@@ -162,6 +167,7 @@
       "fileName": "m53_final.jpg",
       "objectName": "M53",
       "date": "2025-05-08",
+      "type": "DSO",
       "integrationTimes": {
         "OSC": {
           "numberOfPhotos": 86,
@@ -183,6 +189,7 @@
       "fileName": "M13.jpg",
       "objectName": "M13",
       "date": "2025-05-09",
+      "type": "DSO",
       "integrationTimes": {
         "OSC": {
           "numberOfPhotos": 63,
@@ -204,6 +211,7 @@
       "fileName": "eagle_draft.jpg",
       "objectName": "M16 - Eagle Nebula",
       "date": "2025-07-28",
+      "type": "DSO",
       "integrationTimes": {
         "Ha": {
           "numberOfPhotos": 4,
@@ -235,6 +243,7 @@
       "fileName": "dumbbell_nebula.jpg",
       "objectName": "M27 - Dumbbell Nebula",
       "date": "2025-07-31",
+      "type": "DSO",
       "integrationTimes": {
         "Ha": {
           "numberOfPhotos": 20,
@@ -266,6 +275,7 @@
       "fileName": "Crescent_Nebula.jpg",
       "objectName": "NGC 6888 - Crecent Nebula",
       "date": "2025-07-03",
+      "type": "DSO",
       "integrationTimes": {
         "OSC": {
           "numberOfPhotos": 81,
@@ -287,6 +297,7 @@
       "fileName": "bubble_nebula_draft.jpg",
       "objectName": "NGC 7635 - Bubble Nebula",
       "date": "2025-07-28",
+      "type": "DSO",
       "integrationTimes": {
         "Ha": {
           "numberOfPhotos": 9,
@@ -318,6 +329,7 @@
       "fileName": "Markarians_Chain.jpg",
       "objectName": "Markarian's Chain (A galaxy cluster)",
       "date": "2025-04-22",
+      "type": "DSO",
       "integrationTimes": {
         "OSC": {
           "numberOfPhotos": 69,
@@ -339,6 +351,7 @@
       "fileName": "leo_triplet_Final.jpg",
       "objectName": "M66 Group - Leo Triplet",
       "date": "2025-04-16",
+      "type": "DSO",
       "integrationTimes": {
         "OSC": {
           "numberOfPhotos": 100,
@@ -360,6 +373,7 @@
       "fileName": "M101.jpg",
       "objectName": "M101 - Pinwheel Galaxy",
       "date": "2025-05-08",
+      "type": "DSO",
       "integrationTimes": {
         "OSC": {
           "numberOfPhotos": 99,
@@ -381,6 +395,7 @@
       "fileName": "bodes_and_cigar_croped.jpg",
       "objectName": "M81 & M82 - Bode's and Cigar galaxies",
       "date": "2025-03-10",
+      "type": "DSO",
       "integrationTimes": {
         "OSC": {
           "numberOfPhotos": 239,
@@ -402,6 +417,7 @@
       "fileName": "m51.jpg",
       "objectName": "M51 - Whirlpool Galaxy",
       "date": "2025-07-14",
+      "type": "DSO",
       "integrationTimes": {
         "OSC": {
           "numberOfPhotos": 9,
@@ -423,6 +439,7 @@
       "fileName": "M42.jpg",
       "objectName": "M42 - Orion Nebula",
       "date": "2024-12-21",
+      "type": "DSO",
       "integrationTimes": {
         "OSC": {
           "numberOfPhotos": 154,
@@ -432,6 +449,151 @@
       "equipment": {
         "telescope": "Askar 71f",
         "camera": "Cannon T7",
+        "mount": "Sky-Watcher Star Adventurer GTI",
+        "filters": [
+          "OSC"
+        ]
+      }
+    },
+    {
+      "id": "1757556171809",
+      "title": "Mineral Moon 2025-09-08",
+      "fileName": "moon_2025-09-09_mineral.jpg",
+      "objectName": "Mineral Moon 2025-09-08",
+      "date": "2025-09-08",
+      "type": "Lunar",
+      "integrationTimes": {},
+      "equipment": {
+        "telescope": "Askar 71f",
+        "camera": "QHY MiniCam 8",
+        "mount": "Sky-Watcher Star Adventurer GTI",
+        "filters": [
+          "Luminance",
+          "Red",
+          "Green",
+          "Blue"
+        ]
+      }
+    },
+    {
+      "id": "1757556171809",
+      "title": "Moon 2025-09-08",
+      "fileName": "moon_2025-09-09_normal.jpg",
+      "objectName": "Moon 2025-09-08",
+      "date": "2025-09-08",
+      "type": "Lunar",
+      "integrationTimes": {},
+      "equipment": {
+        "telescope": "Askar 71f",
+        "camera": "QHY MiniCam 8",
+        "mount": "Sky-Watcher Star Adventurer GTI",
+        "filters": [
+          "Luminance",
+          "Red",
+          "Green",
+          "Blue"
+        ]
+      }
+    },
+    {
+      "id": "1757557774534",
+      "title": "Saturn",
+      "fileName": "Saturn_sharp.jpg",
+      "objectName": "Saturn",
+      "date": "2025-09-01",
+      "type": "Planetary",
+      "integrationTimes": {},
+      "equipment": {
+        "telescope": "Askar 71f",
+        "camera": "QHY MiniCam 8",
+        "mount": "Sky-Watcher Star Adventurer GTI",
+        "filters": [
+          "Red",
+          "Green",
+          "Blue"
+        ]
+      }
+    },
+    {
+      "id": "1757558222447",
+      "title": "Lunar Eclipse",
+      "fileName": "lunar_eclipse.gif",
+      "thumbnailFileName": "lunar_eclipse.jpg",
+      "objectName": "Lunar Eclipse",
+      "date": "2025-03-14",
+      "type": "Lunar",
+      "integrationTimes": {},
+      "equipment": {
+        "telescope": "Askar 71f",
+        "camera": "Cannon T7",
+        "mount": "Sky-Watcher Star Adventurer GTI",
+        "filters": [
+          "OSC"
+        ]
+      }
+    },
+    {
+      "id": "1757558759587",
+      "title": "Solar Eclipse",
+      "fileName": "merged_eclipse2.png",
+      "objectName": "Solar Eclipse",
+      "date": "2024-04-08",
+      "type": "Solar",
+      "integrationTimes": {},
+      "equipment": {
+        "telescope": "(Solar Eclipse Glasses on Camera)",
+        "camera": "Iphone 13 Pro",
+        "mount": "Tripod",
+        "filters": [
+          "OSC"
+        ]
+      }
+    },
+    {
+      "id": "1757559009083",
+      "title": "Moon 2024-12-21",
+      "fileName": "moon_2024-12-21.png",
+      "objectName": "Moon 2024-12-21",
+      "date": "2024-12-21",
+      "type": "Lunar",
+      "integrationTimes": {},
+      "equipment": {
+        "telescope": "Askar 71f",
+        "camera": "Cannon T3i",
+        "mount": "Sky-Watcher Star Adventurer GTI",
+        "filters": [
+          "OSC"
+        ]
+      }
+    },
+    {
+      "id": "1757559418915",
+      "title": "Jupiter",
+      "fileName": "jupiter2.jpg",
+      "objectName": "Jupiter",
+      "date": "2025-03-12",
+      "type": "Planetary",
+      "integrationTimes": {},
+      "equipment": {
+        "telescope": "Askar 71f",
+        "camera": "Cannon T7",
+        "mount": "Sky-Watcher Star Adventurer GTI",
+        "filters": [
+          "OSC"
+        ]
+      }
+    },
+    {
+      "id": "1757559464889",
+      "title": "Moon - 2024-12-14",
+      "fileName": "mineral_moon_2024-12-14.png",
+      "objectName": "Moon - 2024-12-14",
+      "date": "2024-12-14",
+      "type": "Lunar",
+      "integrationTimes": {},
+      "equipment": {
+        "telescope": "Askar 71f",
+        "camera": "Cannon T3i",
         "mount": "Sky-Watcher Star Adventurer GTI",
         "filters": [
           "OSC"

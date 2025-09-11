@@ -95,6 +95,7 @@ export default function AdminPhotoForm() {
       fileName,
       objectName: formData.objectName || "",
       date: formData.date || new Date().toISOString().split("T")[0],
+      type: formData.type || "DSO",
       integrationTimes: formData.integrationTimes || {},
       equipment: formData.equipment || {
         telescope: "",
@@ -146,6 +147,30 @@ export default function AdminPhotoForm() {
               setFormData((prev) => ({ ...prev, date: e.target.value }))
             }
           />
+        </label>
+
+        <label>
+          Object Type:
+          <select
+            value={formData.type || "DSO"}
+            onChange={(e) =>
+              setFormData((prev) => ({
+                ...prev,
+                type: e.target.value as
+                  | "DSO"
+                  | "Planetary"
+                  | "Lunar"
+                  | "Solar"
+                  | "Other",
+              }))
+            }
+          >
+            <option value="DSO">DSO</option>
+            <option value="Planetary">Planetary</option>
+            <option value="Lunar">Lunar</option>
+            <option value="Solar">Solar</option>
+            <option value="Other">Other</option>
+          </select>
         </label>
       </div>
 

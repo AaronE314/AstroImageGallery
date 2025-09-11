@@ -7,9 +7,11 @@ export interface PhotoData {
     id: string;
     title: string;
     fileName: string;
+    thumbnailFileName?: string;
     objectName: string;
     date: string;
-    integrationTimes: {
+    type: 'DSO' | 'Planetary' | 'Lunar' | 'Solar' | 'Other';
+    integrationTimes?: {
         OSC?: IntegrationTime;
         L?: IntegrationTime;
         R?: IntegrationTime;

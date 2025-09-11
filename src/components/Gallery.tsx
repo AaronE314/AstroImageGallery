@@ -2,6 +2,7 @@ import { useState, useMemo } from "react";
 import type { PhotoData } from "../types/PhotoData";
 import PhotoViewer from "./PhotoViewer";
 import styles from "../styles/Gallery.module.css";
+import PhotoCard from "./PhotoCard";
 
 interface GalleryProps {
   photos: PhotoData[];
@@ -35,18 +36,14 @@ const Gallery = ({ photos }: GalleryProps) => {
   }, [photos, sortBy]);
 
   const calulateTotalIntegrationTime = (photo: PhotoData) => {
+    if (!photo.integrationTimes) return 0;
+
     return Object.values(photo.integrationTimes).reduce((total, time) => {
       if (time) {
         return total + time.numberOfPhotos * time.timePerPhoto;
       }
       return total;
     }, 0);
-  };
-
-  const formatIntegrationTime = (time: number) => {
-    const hours = Math.floor(time / 3600);
-    const minutes = Math.floor((time % 3600) / 60);
-    return `${hours}h ${minutes}min`;
   };
 
   return (
@@ -66,24 +63,11 @@ const Gallery = ({ photos }: GalleryProps) => {
 
       <div className={styles.grid}>
         {sortedPhotos.map((photo, index) => (
-          <div
+          <PhotoCard
             key={photo.id}
-            className={styles.photoCard}
+            photo={photo}
             onClick={() => setSelectedPhotoIndex(index)}
-          >
-            <img
-              src={`./images/${photo.fileName}`}
-              alt={photo.objectName}
-              loading="lazy"
-            />
-            <div className={styles.photoInfo}>
-              <h3>{photo.objectName}</h3>
-              <p>
-                {formatIntegrationTime(calulateTotalIntegrationTime(photo))}
-              </p>
-              <p>{photo.equipment.filters.join(", ")}</p>
-            </div>
-          </div>
+          />
         ))}
       </div>
 
