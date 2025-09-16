@@ -599,6 +599,70 @@
           "OSC"
         ]
       }
+    },
+    {
+      "id": "1758038548605",
+      "title": "Half of the Heart Nebula",
+      "fileName": "Heart_Nebula_Pannel_1.jpg",
+      "objectName": "Half of the Heart Nebula",
+      "date": "2025-09-11",
+      "type": "DSO",
+      "integrationTimes": {
+        "Ha": {
+          "numberOfPhotos": 25,
+          "timePerPhoto": 180
+        },
+        "Oiii": {
+          "numberOfPhotos": 50,
+          "timePerPhoto": 180
+        },
+        "Sii": {
+          "numberOfPhotos": 50,
+          "timePerPhoto": 180
+        }
+      },
+      "equipment": {
+        "telescope": "Askar 71f",
+        "camera": "QHY MiniCam 8",
+        "mount": "Sky-Watcher Star Adventurer GTI",
+        "filters": [
+          "Sii",
+          "Ha",
+          "Oiii"
+        ]
+      }
+    },
+    {
+      "id": "1758038628004",
+      "title": "Full Heart Nebula",
+      "fileName": "Heart_Nebula_mosaic.jpg",
+      "objectName": "Full Heart Nebula",
+      "date": "2025-09-15",
+      "type": "DSO",
+      "integrationTimes": {
+        "Oiii": {
+          "numberOfPhotos": 99,
+          "timePerPhoto": 180
+        },
+        "Sii": {
+          "numberOfPhotos": 100,
+          "timePerPhoto": 180
+        },
+        "Ha": {
+          "numberOfPhotos": 50,
+          "timePerPhoto": 180
+        }
+      },
+      "equipment": {
+        "telescope": "Askar 71f",
+        "camera": "QHY MiniCam 8",
+        "mount": "Sky-Watcher Star Adventurer GTI",
+        "filters": [
+          "Sii",
+          "Ha",
+          "Oiii"
+        ]
+      }
     }
   ]
 }
