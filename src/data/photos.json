@@ -663,6 +663,48 @@
           "Oiii"
         ]
       }
+    },
+    {
+      "id": "1758162331017",
+      "title": "M33 - Triangulum Galaxy",
+      "fileName": "M33_5.jpg",
+      "objectName": "M33 - Triangulum Galaxy",
+      "date": "2025-09-16",
+      "type": "DSO",
+      "integrationTimes": {
+        "B": {
+          "numberOfPhotos": 51,
+          "timePerPhoto": 60
+        },
+        "G": {
+          "numberOfPhotos": 51,
+          "timePerPhoto": 60
+        },
+        "Ha": {
+          "numberOfPhotos": 50,
+          "timePerPhoto": 180
+        },
+        "L": {
+          "numberOfPhotos": 153,
+          "timePerPhoto": 40
+        },
+        "R": {
+          "numberOfPhotos": 50,
+          "timePerPhoto": 60
+        }
+      },
+      "equipment": {
+        "telescope": "Askar 71f",
+        "camera": "QHY MiniCam 8",
+        "mount": "Sky-Watcher Star Adventurer GTI",
+        "filters": [
+          "Luminance",
+          "Red",
+          "Green",
+          "Blue",
+          "Ha"
+        ]
+      }
     }
   ]
 }
