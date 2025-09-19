@@ -705,6 +705,38 @@
           "Ha"
         ]
       }
+    },
+    {
+      "id": "1758251633302",
+      "title": "LDN 1272",
+      "fileName": "ldn1272.jpg",
+      "objectName": "LDN 1272",
+      "date": "2025-09-17",
+      "type": "DSO",
+      "integrationTimes": {
+        "Ha": {
+          "numberOfPhotos": 29,
+          "timePerPhoto": 180
+        },
+        "Oiii": {
+          "numberOfPhotos": 57,
+          "timePerPhoto": 180
+        },
+        "Sii": {
+          "numberOfPhotos": 58,
+          "timePerPhoto": 180
+        }
+      },
+      "equipment": {
+        "telescope": "Askar 71f",
+        "camera": "QHY MiniCam 8",
+        "mount": "Sky-Watcher Star Adventurer GTI",
+        "filters": [
+          "Sii",
+          "Ha",
+          "Oiii"
+        ]
+      }
     }
   ]
 }
