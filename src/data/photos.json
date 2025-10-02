@@ -774,6 +774,80 @@
           "Blue"
         ]
       }
+    },
+    {
+      "id": "1759371494261",
+      "title": "IC 5146 - Cocoon Nebula",
+      "fileName": "cocoon_nebula.jpg",
+      "objectName": "IC 5146 - Cocoon Nebula",
+      "date": "2025-09-30",
+      "type": "DSO",
+      "integrationTimes": {
+        "Ha": {
+          "numberOfPhotos": 28,
+          "timePerPhoto": 300
+        },
+        "R": {
+          "numberOfPhotos": 101,
+          "timePerPhoto": 60
+        },
+        "G": {
+          "numberOfPhotos": 101,
+          "timePerPhoto": 60
+        },
+        "B": {
+          "numberOfPhotos": 101,
+          "timePerPhoto": 60
+        },
+        "L": {
+          "numberOfPhotos": 238,
+          "timePerPhoto": 60
+        }
+      },
+      "equipment": {
+        "telescope": "Askar 71f",
+        "camera": "QHY MiniCam 8",
+        "mount": "Sky-Watcher Star Adventurer GTI",
+        "filters": [
+          "Luminance",
+          "Red",
+          "Green",
+          "Blue",
+          "Ha"
+        ]
+      }
+    },
+    {
+      "id": "1759371836735",
+      "title": "Sh2 157 - Lobster Claw Nebula",
+      "fileName": "Lobster_claw_nebula.jpg",
+      "objectName": "Sh2 157 - Lobster Claw Nebula",
+      "date": "2025-09-28",
+      "type": "DSO",
+      "integrationTimes": {
+        "Ha": {
+          "numberOfPhotos": 20,
+          "timePerPhoto": 300
+        },
+        "Oiii": {
+          "numberOfPhotos": 38,
+          "timePerPhoto": 300
+        },
+        "Sii": {
+          "numberOfPhotos": 40,
+          "timePerPhoto": 300
+        }
+      },
+      "equipment": {
+        "telescope": "Askar 71f",
+        "camera": "QHY MiniCam 8",
+        "mount": "Sky-Watcher Star Adventurer GTI",
+        "filters": [
+          "Sii",
+          "Ha",
+          "Oiii"
+        ]
+      }
     }
   ]
 }
