@@ -848,6 +848,38 @@
           "Oiii"
         ]
       }
+    },
+    {
+      "id": "1760459139530",
+      "title": "Soul Nebula",
+      "fileName": "Soul_nebula.jpg",
+      "objectName": "Soul Nebula",
+      "date": "2025-10-13",
+      "type": "DSO",
+      "integrationTimes": {
+        "Ha": {
+          "numberOfPhotos": 66,
+          "timePerPhoto": 180
+        },
+        "Oiii": {
+          "numberOfPhotos": 130,
+          "timePerPhoto": 180
+        },
+        "Sii": {
+          "numberOfPhotos": 133,
+          "timePerPhoto": 180
+        }
+      },
+      "equipment": {
+        "telescope": "Askar 71f",
+        "camera": "QHY MiniCam 8",
+        "mount": "Sky-Watcher Star Adventurer GTI",
+        "filters": [
+          "Sii",
+          "Ha",
+          "Oiii"
+        ]
+      }
     }
   ]
 }
