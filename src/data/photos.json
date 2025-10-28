@@ -880,6 +880,43 @@
           "Oiii"
         ]
       }
+    },
+    {
+      "id": "1761621276045",
+      "title": "Comet C/2025 A6 (Lemmon)",
+      "fileName": "C-2025_A6_Lemmon.jpg",
+      "objectName": "Comet C/2025 A6 (Lemmon)",
+      "date": "2025-10-27",
+      "type": "Other",
+      "integrationTimes": {
+        "B": {
+          "numberOfPhotos": 8,
+          "timePerPhoto": 30
+        },
+        "G": {
+          "numberOfPhotos": 9,
+          "timePerPhoto": 30
+        },
+        "L": {
+          "numberOfPhotos": 9,
+          "timePerPhoto": 30
+        },
+        "R": {
+          "numberOfPhotos": 10,
+          "timePerPhoto": 30
+        }
+      },
+      "equipment": {
+        "telescope": "Askar 71f",
+        "camera": "QHY MiniCam 8",
+        "mount": "Sky-Watcher WAVE 100i",
+        "filters": [
+          "Red",
+          "Luminance",
+          "Green",
+          "Blue"
+        ]
+      }
     }
   ]
 }
