@@ -949,6 +949,43 @@
           "Sii"
         ]
       }
+    },
+    {
+      "id": "1761751609545",
+      "title": "Comet C/2025 R2 (Swan)",
+      "fileName": "C-2025_R2_Swan.jpg",
+      "objectName": "Comet C/2025 R2 (Swan)",
+      "date": "2025-10-28",
+      "type": "Other",
+      "integrationTimes": {
+        "B": {
+          "numberOfPhotos": 16,
+          "timePerPhoto": 90
+        },
+        "G": {
+          "numberOfPhotos": 15,
+          "timePerPhoto": 90
+        },
+        "L": {
+          "numberOfPhotos": 17,
+          "timePerPhoto": 90
+        },
+        "R": {
+          "numberOfPhotos": 15,
+          "timePerPhoto": 90
+        }
+      },
+      "equipment": {
+        "telescope": "Askar 71f",
+        "camera": "QHY MiniCam 8",
+        "mount": "Sky-Watcher WAVE 100i",
+        "filters": [
+          "Luminance",
+          "Red",
+          "Green",
+          "Blue"
+        ]
+      }
     }
   ]
 }
