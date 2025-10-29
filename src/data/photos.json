@@ -917,6 +917,38 @@
           "Blue"
         ]
       }
+    },
+    {
+      "id": "1761699452067",
+      "title": "Sh2-184 - The Pacman Nebula",
+      "fileName": "PacMan_Nebula.jpg",
+      "objectName": "Sh2-184 - The Pacman Nebula",
+      "date": "2025-10-27",
+      "type": "DSO",
+      "integrationTimes": {
+        "Ha": {
+          "numberOfPhotos": 15,
+          "timePerPhoto": 300
+        },
+        "Sii": {
+          "numberOfPhotos": 15,
+          "timePerPhoto": 300
+        },
+        "Oiii": {
+          "numberOfPhotos": 14,
+          "timePerPhoto": 300
+        }
+      },
+      "equipment": {
+        "telescope": "Askar 71f",
+        "camera": "QHY MiniCam 8",
+        "mount": "Sky-Watcher WAVE 100i",
+        "filters": [
+          "Oiii",
+          "Ha",
+          "Sii"
+        ]
+      }
     }
   ]
 }
