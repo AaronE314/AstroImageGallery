@@ -986,6 +986,43 @@
           "Blue"
         ]
       }
+    },
+    {
+      "id": "1763142698190",
+      "title": "M42 - The Orion Nebula",
+      "fileName": "orion_nebula.jpg",
+      "objectName": "M42 - The Orion Nebula",
+      "date": "2025-11-13",
+      "type": "DSO",
+      "integrationTimes": {
+        "G": {
+          "numberOfPhotos": 9,
+          "timePerPhoto": 60
+        },
+        "B": {
+          "numberOfPhotos": 9,
+          "timePerPhoto": 69
+        },
+        "R": {
+          "numberOfPhotos": 9,
+          "timePerPhoto": 60
+        },
+        "Ha": {
+          "numberOfPhotos": 9,
+          "timePerPhoto": 180
+        }
+      },
+      "equipment": {
+        "telescope": "Askar 71f",
+        "camera": "QHY MiniCam 8",
+        "mount": "Sky-Watcher WAVE 100i",
+        "filters": [
+          "Ha",
+          "Green",
+          "Red",
+          "Blue"
+        ]
+      }
     }
   ]
 }
