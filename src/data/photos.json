@@ -1023,6 +1023,38 @@
           "Blue"
         ]
       }
+    },
+    {
+      "id": "1770088927951",
+      "title": "Horsehead Nebula",
+      "fileName": "horsehead_nebula.jpg",
+      "objectName": "Horsehead Nebula",
+      "date": "2026-02-01",
+      "type": "DSO",
+      "integrationTimes": {
+        "Ha": {
+          "numberOfPhotos": 13,
+          "timePerPhoto": 180
+        },
+        "Oiii": {
+          "numberOfPhotos": 12,
+          "timePerPhoto": 180
+        },
+        "Sii": {
+          "numberOfPhotos": 15,
+          "timePerPhoto": 180
+        }
+      },
+      "equipment": {
+        "telescope": "Askar 71f",
+        "camera": "QHY MiniCam 8",
+        "mount": "Sky-Watcher WAVE 100i",
+        "filters": [
+          "Sii",
+          "Ha",
+          "Oiii"
+        ]
+      }
     }
   ]
 }
