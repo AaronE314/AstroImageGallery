@@ -1055,6 +1055,38 @@
           "Oiii"
         ]
       }
+    },
+    {
+      "id": "1771176960623",
+      "title": "NGC 2264 - The Christmas Tree Cluster",
+      "fileName": "christmastree_nebula.jpg",
+      "objectName": "NGC 2264 - The Christmas Tree Cluster",
+      "date": "2026-02-14",
+      "type": "DSO",
+      "integrationTimes": {
+        "Ha": {
+          "numberOfPhotos": 14,
+          "timePerPhoto": 180
+        },
+        "Oiii": {
+          "numberOfPhotos": 25,
+          "timePerPhoto": 180
+        },
+        "Sii": {
+          "numberOfPhotos": 25,
+          "timePerPhoto": 180
+        }
+      },
+      "equipment": {
+        "telescope": "Askar 71f",
+        "camera": "QHY MiniCam 8",
+        "mount": "Sky-Watcher WAVE 100i",
+        "filters": [
+          "Sii",
+          "Ha",
+          "Oiii"
+        ]
+      }
     }
   ]
 }
