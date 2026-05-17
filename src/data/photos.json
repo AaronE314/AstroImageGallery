@@ -1087,6 +1087,126 @@
           "Oiii"
         ]
       }
+    },
+    {
+      "id": "1778992073377",
+      "title": "M81 & M82 Bode's and Cidar galaxy",
+      "fileName": "bodes_and_cigar.jpg",
+      "objectName": "M81 & M82 Bode's and Cidar galaxy",
+      "date": "2026-04-07",
+      "type": "DSO",
+      "integrationTimes": {
+        "R": {
+          "numberOfPhotos": 52,
+          "timePerPhoto": 60
+        },
+        "G": {
+          "numberOfPhotos": 52,
+          "timePerPhoto": 60
+        },
+        "B": {
+          "numberOfPhotos": 52,
+          "timePerPhoto": 60
+        },
+        "L": {
+          "numberOfPhotos": 111,
+          "timePerPhoto": 40
+        },
+        "Ha": {
+          "timePerPhoto": 180,
+          "numberOfPhotos": 36
+        }
+      },
+      "equipment": {
+        "telescope": "Askar 71f",
+        "camera": "QHY MiniCam 8",
+        "mount": "Sky-Watcher WAVE 100i",
+        "filters": [
+          "Luminance",
+          "Red",
+          "Green",
+          "Blue",
+          "Ha"
+        ]
+      }
+    },
+    {
+      "id": "1778991885332",
+      "title": "M84 & Markarians Chain",
+      "fileName": "Markarians_chain2.jpg",
+      "objectName": "M84 & Markarians Chain",
+      "date": "2026-04-22",
+      "type": "DSO",
+      "integrationTimes": {
+        "L": {
+          "numberOfPhotos": 93,
+          "timePerPhoto": 40
+        },
+        "R": {
+          "numberOfPhotos": 31,
+          "timePerPhoto": 60
+        },
+        "G": {
+          "numberOfPhotos": 31,
+          "timePerPhoto": 60
+        },
+        "B": {
+          "numberOfPhotos": 31,
+          "timePerPhoto": 60
+        }
+      },
+      "equipment": {
+        "telescope": "Askar 71f",
+        "camera": "QHY MiniCam 8",
+        "mount": "Sky-Watcher WAVE 100i",
+        "filters": [
+          "Red",
+          "Blue",
+          "Luminance",
+          "Green"
+        ]
+      }
+    },
+    {
+      "id": "1778992189346",
+      "title": "M106",
+      "fileName": "M106.jpg",
+      "objectName": "M106",
+      "date": "2026-05-15",
+      "type": "DSO",
+      "integrationTimes": {
+        "L": {
+          "numberOfPhotos": 111,
+          "timePerPhoto": 60
+        },
+        "R": {
+          "numberOfPhotos": 38,
+          "timePerPhoto": 60
+        },
+        "G": {
+          "numberOfPhotos": 38,
+          "timePerPhoto": 60
+        },
+        "B": {
+          "numberOfPhotos": 38,
+          "timePerPhoto": 60
+        },
+        "Ha": {
+          "numberOfPhotos": 38,
+          "timePerPhoto": 180
+        }
+      },
+      "equipment": {
+        "telescope": "Askar 71f",
+        "camera": "QHY MiniCam 8",
+        "mount": "Sky-Watcher WAVE 100i",
+        "filters": [
+          "Luminance",
+          "Green",
+          "Blue",
+          "Ha"
+        ]
+      }
     }
   ]
 }
