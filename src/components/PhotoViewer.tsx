@@ -46,10 +46,26 @@ const PhotoViewer = ({
     }
   };
 
+  const openFullResImage = () => {
+    window.open(`./images/${currentPhoto.fileName}`, "_blank");
+  };
+
+  const handleOverlayClick = () => {
+    const isMobile = window.matchMedia("(max-width: 1024px)").matches;
+    if (!isMobile) {
+      onClose();
+    }
+  };
+
   useEffect(() => {
     document.addEventListener("keydown", handleKeyPress);
+
+    // Prevent scrolling on background
+    document.body.style.overflow = "hidden";
+
     return () => {
       document.removeEventListener("keydown", handleKeyPress);
+      document.body.style.overflow = "";
     };
   }, [handleKeyPress]);
 
@@ -62,56 +78,63 @@ const PhotoViewer = ({
 
   return (
     <div className={styles.viewer}>
-      <div className={styles.overlay} onClick={onClose}>
-        <button className={styles.closeButton}>&times;</button>
+      <div className={styles.overlay} onClick={handleOverlayClick}>
+        <button className={styles.closeButton} onClick={onClose}>&times;</button>
+        <button className={styles.mobileCloseButton} onClick={onClose}>
+          Close
+        </button>
+        <button className={styles.fullResButton} onClick={openFullResImage}>
+          ⛶
+        </button>
+
+        <div
+          className={styles.screenTouchAreaLeft}
+          onClick={(e) => handleTouchArea(e, "left")}
+        />
+        <div
+          className={styles.screenTouchAreaRight}
+          onClick={(e) => handleTouchArea(e, "right")}
+        />
 
         <div className={styles.contentWrapper}>
+          <button
+            className={`${styles.navButton} ${styles.navButtonLeft} ${
+              currentIndex <= 0 ? styles.hidden : ""
+            }`}
+            onClick={(e) => {
+              e.stopPropagation();
+              if (currentIndex > 0) onNavigate(currentIndex - 1);
+            }}
+          >
+            &lt;
+          </button>
           <div className={styles.navigation}>
-            <button
-              className={`${styles.navButton} ${
-                currentIndex <= 0 ? styles.hidden : ""
-              }`}
-              onClick={(e) => {
-                e.stopPropagation();
-                if (currentIndex > 0) onNavigate(currentIndex - 1);
-              }}
-            >
-              &lt;
-            </button>
 
             <div
               className={styles.photoContainer}
               onClick={(e) => e.stopPropagation()}
             >
-              <div
-                className={styles.touchAreaLeft}
-                onClick={(e) => handleTouchArea(e, "left")}
-              />
               <img
                 src={`./images/${currentPhoto.fileName}`}
                 alt={currentPhoto.objectName}
               />
-              <div
-                className={styles.touchAreaRight}
-                onClick={(e) => handleTouchArea(e, "right")}
-              />
             </div>
 
-            <button
-              className={`${styles.navButton} ${
-                currentIndex >= photos.length - 1 ? styles.hidden : ""
-              }`}
-              onClick={(e) => {
-                e.stopPropagation();
-                if (currentIndex < photos.length - 1)
-                  onNavigate(currentIndex + 1);
-              }}
-            >
-              &gt;
-            </button>
           </div>
+          <button
+            className={`${styles.navButton} ${styles.navButtonRight} ${
+              currentIndex >= photos.length - 1 ? styles.hidden : ""
+            }`}
+            onClick={(e) => {
+              e.stopPropagation();
+              if (currentIndex < photos.length - 1)
+                onNavigate(currentIndex + 1);
+            }}
+          >
+            &gt;
+          </button>
 
-          <div className={styles.photoDetails}>
+          <div className={styles.photoDetails} onClick={(e) => e.stopPropagation()}>
             <h2>{currentPhoto.objectName}</h2>
             <p>Date: {new Date(currentPhoto.date).toLocaleDateString()}</p>
             <p>Filters: {currentPhoto.equipment.filters.join(", ")}</p>
@@ -135,6 +158,16 @@ const PhotoViewer = ({
               <p>Telescope: {currentPhoto.equipment.telescope}</p>
               <p>Camera: {currentPhoto.equipment.camera}</p>
               <p>Mount: {currentPhoto.equipment.mount}</p>
+            </div>
+
+            <div className={styles.downloadSection}>
+              <a
+                href={`./images/${currentPhoto.fileName}`}
+                download={currentPhoto.fileName}
+                className={styles.downloadLink}
+              >
+                Download Full Resolution
+              </a>
             </div>
           </div>
         </div>
