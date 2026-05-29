@@ -1207,6 +1207,38 @@
           "Ha"
         ]
       }
+    },
+    {
+      "id": "1780023772365",
+      "title": "M13",
+      "fileName": "M13_Drizzle.jpg",
+      "objectName": "M13",
+      "date": "2026-05-27",
+      "type": "DSO",
+      "integrationTimes": {
+        "B": {
+          "numberOfPhotos": 36,
+          "timePerPhoto": 60
+        },
+        "R": {
+          "numberOfPhotos": 37,
+          "timePerPhoto": 60
+        },
+        "G": {
+          "numberOfPhotos": 36,
+          "timePerPhoto": 60
+        }
+      },
+      "equipment": {
+        "telescope": "Askar 71f",
+        "camera": "QHY MiniCam 8",
+        "mount": "Sky-Watcher WAVE 100i",
+        "filters": [
+          "Red",
+          "Green",
+          "Blue"
+        ]
+      }
     }
   ]
 }
