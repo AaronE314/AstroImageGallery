@@ -1239,6 +1239,65 @@
           "Blue"
         ]
       }
+    },
+    {
+      "id": "1782683287636",
+      "title": "NGC 6888 - Crecent Nebula",
+      "fileName": "Crecent_nebula_new.jpg",
+      "objectName": "NGC 6888 - Crecent Nebula",
+      "date": "2026-06-01",
+      "type": "DSO",
+      "integrationTimes": {
+        "Ha": {
+          "numberOfPhotos": 43,
+          "timePerPhoto": 180
+        },
+        "Oiii": {
+          "numberOfPhotos": 43,
+          "timePerPhoto": 180
+        }
+      },
+      "equipment": {
+        "telescope": "Askar 71f",
+        "camera": "QHY MiniCam 8",
+        "mount": "Sky-Watcher WAVE 100i",
+        "filters": [
+          "Ha",
+          "Oiii"
+        ]
+      }
+    },
+    {
+      "id": "1782683126119",
+      "title": "NGC 7000 - North America Nebula",
+      "fileName": "NGC7000.jpg",
+      "objectName": "NGC 7000 - North America Nebula",
+      "date": "2026-06-27",
+      "type": "DSO",
+      "integrationTimes": {
+        "Sii": {
+          "numberOfPhotos": 26,
+          "timePerPhoto": 180
+        },
+        "Ha": {
+          "numberOfPhotos": 25,
+          "timePerPhoto": 180
+        },
+        "Oiii": {
+          "numberOfPhotos": 25,
+          "timePerPhoto": 180
+        }
+      },
+      "equipment": {
+        "telescope": "Askar 71f",
+        "camera": "QHY MiniCam 8",
+        "mount": "Sky-Watcher WAVE 100i",
+        "filters": [
+          "Sii",
+          "Ha",
+          "Oiii"
+        ]
+      }
     }
   ]
 }
