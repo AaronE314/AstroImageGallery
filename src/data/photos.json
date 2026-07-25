@@ -1298,6 +1298,38 @@
           "Oiii"
         ]
       }
+    },
+    {
+      "id": "1784952182841",
+      "title": "IC 1318",
+      "fileName": "IC 1318.jpg",
+      "objectName": "IC 1318",
+      "date": "2026-07-24",
+      "type": "DSO",
+      "integrationTimes": {
+        "Ha": {
+          "numberOfPhotos": 30,
+          "timePerPhoto": 180
+        },
+        "Oiii": {
+          "numberOfPhotos": 30,
+          "timePerPhoto": 180
+        },
+        "Sii": {
+          "numberOfPhotos": 30,
+          "timePerPhoto": 180
+        }
+      },
+      "equipment": {
+        "telescope": "Askar 71f",
+        "camera": "QHY MiniCam 8",
+        "mount": "Sky-Watcher WAVE 100i",
+        "filters": [
+          "Sii",
+          "Ha",
+          "Oiii"
+        ]
+      }
     }
   ]
 }
