@@ -1330,6 +1330,38 @@
           "Oiii"
         ]
       }
+    },
+    {
+      "id": "1785980180952",
+      "title": "NGC 6960 - Western Veil Nebula",
+      "fileName": "western_veil_nebula.jpg",
+      "objectName": "NGC 6960 - Western Veil Nebula",
+      "date": "2026-08-04",
+      "type": "DSO",
+      "integrationTimes": {
+        "Sii": {
+          "numberOfPhotos": 35,
+          "timePerPhoto": 180
+        },
+        "Ha": {
+          "numberOfPhotos": 35,
+          "timePerPhoto": 180
+        },
+        "Oiii": {
+          "numberOfPhotos": 35,
+          "timePerPhoto": 180
+        }
+      },
+      "equipment": {
+        "telescope": "Askar 71f",
+        "camera": "QHY MiniCam 8",
+        "mount": "Sky-Watcher WAVE 100i",
+        "filters": [
+          "Sii",
+          "Ha",
+          "Oiii"
+        ]
+      }
     }
   ]
 }
