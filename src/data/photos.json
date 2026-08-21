@@ -1362,6 +1362,38 @@
           "Oiii"
         ]
       }
+    },
+    {
+      "id": "1787335550127",
+      "title": "IC 5070 - Pelican Nebula",
+      "fileName": "pelican_nebula_final.jpg",
+      "objectName": "IC 5070 - Pelican Nebula",
+      "date": "2026-08-20",
+      "type": "DSO",
+      "integrationTimes": {
+        "Sii": {
+          "timePerPhoto": 180,
+          "numberOfPhotos": 46
+        },
+        "Ha": {
+          "timePerPhoto": 180,
+          "numberOfPhotos": 31
+        },
+        "Oiii": {
+          "numberOfPhotos": 46,
+          "timePerPhoto": 180
+        }
+      },
+      "equipment": {
+        "telescope": "Askar 71f",
+        "camera": "QHY MiniCam 8",
+        "mount": "Sky-Watcher WAVE 100i",
+        "filters": [
+          "Sii",
+          "Ha",
+          "Oiii"
+        ]
+      }
     }
   ]
 }
