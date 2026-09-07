@@ -1394,6 +1394,28 @@
           "Oiii"
         ]
       }
+    },
+    {
+      "id": "1788720056930",
+      "title": "Partial Lunar Eclipse Aug 26",
+      "fileName": "eclipse_max_final.jpg",
+      "objectName": "Partial Lunar Eclipse Aug 26",
+      "date": "2026-08-26",
+      "type": "Lunar",
+      "integrationTimes": {
+        "OSC": {
+          "numberOfPhotos": 38,
+          "timePerPhoto": 2
+        }
+      },
+      "equipment": {
+        "telescope": "Askar 71f",
+        "camera": "Cannon T7",
+        "mount": "Sky-Watcher WAVE 100i",
+        "filters": [
+          "OSC"
+        ]
+      }
     }
   ]
 }
