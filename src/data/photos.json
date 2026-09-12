@@ -1416,6 +1416,43 @@
           "OSC"
         ]
       }
+    },
+    {
+      "id": "1789228367152",
+      "title": "LDN 1235 - The DarkShark Nebula",
+      "fileName": "dark_shark_nebula.jpg",
+      "objectName": "LDN 1235 - The DarkShark Nebula",
+      "date": "2026-09-11",
+      "type": "DSO",
+      "integrationTimes": {
+        "B": {
+          "numberOfPhotos": 62,
+          "timePerPhoto": 60
+        },
+        "G": {
+          "numberOfPhotos": 61,
+          "timePerPhoto": 60
+        },
+        "R": {
+          "numberOfPhotos": 63,
+          "timePerPhoto": 60
+        },
+        "L": {
+          "numberOfPhotos": 143,
+          "timePerPhoto": 60
+        }
+      },
+      "equipment": {
+        "telescope": "Askar 71f",
+        "camera": "QHY MiniCam 8",
+        "mount": "Sky-Watcher WAVE 100i",
+        "filters": [
+          "Luminance",
+          "Red",
+          "Green",
+          "Blue"
+        ]
+      }
     }
   ]
 }

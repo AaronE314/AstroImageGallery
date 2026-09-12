@@ -8,7 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "generate_thumbnails": "node ./generate_thumbnails.cjs"
+    "generate_thumbnails": "node ./generate-thumbnails.cjs"
   },
   "dependencies": {
     "react": "^19.1.1",
