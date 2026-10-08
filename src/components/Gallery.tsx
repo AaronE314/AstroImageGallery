@@ -3,6 +3,7 @@ import type { PhotoData } from "../types/PhotoData";
 import PhotoViewer from "./PhotoViewer";
 import styles from "../styles/Gallery.module.css";
 import PhotoCard from "./PhotoCard";
+import { getTotalIntegrationSeconds } from "../utils/integrationTime";
 
 interface GalleryProps {
   photos: PhotoData[];
@@ -24,9 +25,7 @@ const Gallery = ({ photos }: GalleryProps) => {
         case "name":
           return a.objectName.localeCompare(b.objectName);
         case "integrationTime":
-          return (
-            calulateTotalIntegrationTime(b) - calulateTotalIntegrationTime(a)
-          );
+          return getTotalIntegrationSeconds(b) - getTotalIntegrationSeconds(a);
         case "equipment":
           return a.equipment.camera.localeCompare(b.equipment.camera);
         default:
@@ -34,17 +33,6 @@ const Gallery = ({ photos }: GalleryProps) => {
       }
     });
   }, [photos, sortBy]);
-
-  const calulateTotalIntegrationTime = (photo: PhotoData) => {
-    if (!photo.integrationTimes) return 0;
-
-    return Object.values(photo.integrationTimes).reduce((total, time) => {
-      if (time) {
-        return total + time.numberOfPhotos * time.timePerPhoto;
-      }
-      return total;
-    }, 0);
-  };
 
   return (
     <div className={styles.gallery}>

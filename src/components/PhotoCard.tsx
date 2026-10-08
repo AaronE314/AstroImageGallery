@@ -1,20 +1,9 @@
 import { memo } from "react";
 import type { PhotoData } from "../types/PhotoData";
 import styles from "../styles/Gallery.module.css";
+import { getTotalIntegrationSeconds } from "../utils/integrationTime";
 
 // --- Memoized integration time calculation ---
-const integrationTimeCache = new WeakMap<PhotoData, number>();
-const calculateTotalIntegrationTime = (photo: PhotoData) => {
-  if (integrationTimeCache.has(photo)) return integrationTimeCache.get(photo)!;
-  if (!photo.integrationTimes) return 0;
-  const total = Object.values(photo.integrationTimes).reduce((sum, time) => {
-    if (time) return sum + time.numberOfPhotos * time.timePerPhoto;
-    return sum;
-  }, 0);
-  integrationTimeCache.set(photo, total);
-  return total;
-};
-
 const formatIntegrationTime = (time: number) => {
   const hours = Math.floor(time / 3600);
   const minutes = Math.floor((time % 3600) / 60);
@@ -29,13 +18,13 @@ interface PhotoCardProps {
 const PhotoCard = memo(({ photo, onClick }: PhotoCardProps) => (
   <div className={styles.photoCard} onClick={onClick}>
     <img
-      src={`./images/thumbnails/${photo.thumbnailFileName || photo.fileName}`}
+      src={`./images/thumbnails/${photo.variants?.[0]?.thumbnailFileName || photo.thumbnailFileName || photo.variants?.[0]?.fileName || photo.fileName}`}
       alt={photo.objectName}
       loading="lazy"
     />
     <div className={styles.photoInfo}>
       <h3>{photo.objectName}</h3>
-      <p>{formatIntegrationTime(calculateTotalIntegrationTime(photo))}</p>
+      <p>{formatIntegrationTime(getTotalIntegrationSeconds(photo))}</p>
       <p>{photo.equipment.filters.join(", ")}</p>
     </div>
   </div>

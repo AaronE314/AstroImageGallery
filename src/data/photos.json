@@ -1453,6 +1453,107 @@
           "Blue"
         ]
       }
+    },
+    {
+      "id": "1791422273983",
+      "title": "M31 - Andromeda with NB",
+      "fileName": "Andromeda_Realistic.jpg",
+      "variants": [
+        {
+          "label": "Andromeda with Narrowband",
+          "fileName": "Andromeda_Realistic.jpg"
+        },
+        {
+          "label": "Andromeda true colour",
+          "fileName": "andromeda.jpg"
+        },
+        {
+          "label": "Andromeda with Narrowband Forax",
+          "fileName": "Andromeda_Forax.jpg"
+        },
+        {
+          "label": "Andromeda in Narrowband only",
+          "fileName": "Andromeda_NB_Realistic.jpg"
+        },
+        {
+          "label": "Andromeda in Narrowband only Forax",
+          "fileName": "Andromeda_NB_Forax.jpg"
+        }
+      ],
+      "objectName": "M31 - Andromeda with NB",
+      "date": "2026-09-22",
+      "dates": [
+        "2026-09-22",
+        "2026-09-23",
+        "2026-10-05"
+      ],
+      "type": "DSO",
+      "integrationTimesByDate": {
+        "2026-09-22": {
+          "L": {
+            "numberOfPhotos": 158,
+            "timePerPhoto": 60
+          },
+          "R": {
+            "numberOfPhotos": 70,
+            "timePerPhoto": 60
+          },
+          "G": {
+            "numberOfPhotos": 79,
+            "timePerPhoto": 60
+          },
+          "B": {
+            "numberOfPhotos": 78,
+            "timePerPhoto": 60
+          }
+        },
+        "2026-09-23": {
+          "L": {
+            "numberOfPhotos": 182,
+            "timePerPhoto": 60
+          },
+          "R": {
+            "numberOfPhotos": 92,
+            "timePerPhoto": 60
+          },
+          "G": {
+            "numberOfPhotos": 92,
+            "timePerPhoto": 60
+          },
+          "B": {
+            "numberOfPhotos": 92,
+            "timePerPhoto": 60
+          }
+        },
+        "2026-10-05": {
+          "Sii": {
+            "numberOfPhotos": 55,
+            "timePerPhoto": 180
+          },
+          "Ha": {
+            "numberOfPhotos": 54,
+            "timePerPhoto": 180
+          },
+          "Oiii": {
+            "numberOfPhotos": 54,
+            "timePerPhoto": 180
+          }
+        }
+      },
+      "equipment": {
+        "telescope": "Askar 71f",
+        "camera": "QHY MiniCam 8",
+        "mount": "Sky-Watcher WAVE 100i",
+        "filters": [
+          "Red",
+          "Oiii",
+          "Green",
+          "Luminance",
+          "Blue",
+          "Sii",
+          "Ha"
+        ]
+      }
     }
   ]
 }

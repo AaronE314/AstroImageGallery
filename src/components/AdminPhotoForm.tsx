@@ -28,7 +28,11 @@ export default function AdminPhotoForm() {
   const [selectedFilters, setSelectedFilters] = useState<Set<Filters>>(
     new Set()
   );
-  const [fileName, setFileName] = useState("");
+  const [variants, setVariants] = useState([{ label: "Original", fileName: "" }]);
+  const [captureDates, setCaptureDates] = useState([""]);
+  const [integrationTimesByDate, setIntegrationTimesByDate] = useState<
+    NonNullable<PhotoData["integrationTimesByDate"]>
+  >({});
 
   const availableFilters: Filters[] = [
     "OSC",
@@ -70,18 +74,39 @@ export default function AdminPhotoForm() {
     }));
   };
 
+  const filterTypeByFilter: Record<Filters, FilterType> = {
+    OSC: "OSC",
+    Luminance: "L",
+    Red: "R",
+    Green: "G",
+    Blue: "B",
+    Sii: "Sii",
+    Ha: "Ha",
+    Oiii: "Oiii",
+  };
+
+  const selectedIntegrationFilters = filterTypes.filter((filter) =>
+    Array.from(selectedFilters).some(
+      (selectedFilter) => filterTypeByFilter[selectedFilter] === filter
+    )
+  );
+
   const handleIntegrationTimeChange = (
+    date: string,
     filter: FilterType,
     field: "numberOfPhotos" | "timePerPhoto",
     value: string
   ) => {
     const numValue = parseInt(value) || 0;
-    setFormData((prev) => ({
-      ...prev,
-      integrationTimes: {
-        ...prev.integrationTimes,
+    setIntegrationTimesByDate((previousTimes) => ({
+      ...previousTimes,
+      [date]: {
+        ...previousTimes[date],
         [filter]: {
-          ...(prev.integrationTimes?.[filter] || {}),
+          ...(previousTimes[date]?.[filter] || {
+            numberOfPhotos: 0,
+            timePerPhoto: 0,
+          }),
           [field]: numValue,
         },
       },
@@ -89,14 +114,36 @@ export default function AdminPhotoForm() {
   };
 
   const generateJSON = () => {
+    const dates = Array.from(new Set(captureDates.filter(Boolean))).sort();
+    const defaultDate = new Date().toISOString().split("T")[0];
+    const photoDates = dates.length > 0 ? dates : [defaultDate];
+    const photoIntegrationTimesByDate = Object.fromEntries(
+      dates.map((date) => [
+        date,
+        Object.fromEntries(
+          selectedIntegrationFilters.flatMap((filter) => {
+            const time = integrationTimesByDate[date]?.[filter];
+            return time ? [[filter, time]] : [];
+          })
+        ),
+      ])
+    );
+    const photoVariants = variants
+      .filter((variant) => variant.fileName.trim())
+      .map((variant, index) => ({
+        ...variant,
+        label: variant.label.trim() || `Variant ${index + 1}`,
+      }));
     const photoData: PhotoData = {
       id: new Date().getTime().toString(),
       title: formData.objectName || "",
-      fileName,
+      fileName: photoVariants[0]?.fileName ?? "",
+      variants: photoVariants,
       objectName: formData.objectName || "",
-      date: formData.date || new Date().toISOString().split("T")[0],
+      date: photoDates[0],
+      dates: photoDates,
       type: formData.type || "DSO",
-      integrationTimes: formData.integrationTimes || {},
+      integrationTimesByDate: photoIntegrationTimesByDate,
       equipment: formData.equipment || {
         telescope: "",
         camera: "",
@@ -128,26 +175,116 @@ export default function AdminPhotoForm() {
           />
         </label>
 
-        <label>
-          File Name:
-          <input
-            type="text"
-            value={fileName}
-            onChange={(e) => setFileName(e.target.value)}
-            placeholder="e.g., m31.jpg"
-          />
-        </label>
-
-        <label>
-          Date:
-          <input
-            type="date"
-            value={formData.date || ""}
-            onChange={(e) =>
-              setFormData((prev) => ({ ...prev, date: e.target.value }))
+        <div className={styles.photoVariants}>
+          <h3>Image Variants</h3>
+          {variants.map((variant, index) => (
+            <div className={styles.variantRow} key={index}>
+              <label>
+                Variant name:
+                <input
+                  type="text"
+                  value={variant.label}
+                  placeholder="e.g., HOO"
+                  onChange={(event) =>
+                    setVariants((previousVariants) =>
+                      previousVariants.map((previousVariant, variantIndex) =>
+                        variantIndex === index
+                          ? { ...previousVariant, label: event.target.value }
+                          : previousVariant
+                      )
+                    )
+                  }
+                />
+              </label>
+              <label>
+                File name:
+                <input
+                  type="text"
+                  value={variant.fileName}
+                  placeholder="e.g., m31-hoo.jpg"
+                  onChange={(event) =>
+                    setVariants((previousVariants) =>
+                      previousVariants.map((previousVariant, variantIndex) =>
+                        variantIndex === index
+                          ? { ...previousVariant, fileName: event.target.value }
+                          : previousVariant
+                      )
+                    )
+                  }
+                />
+              </label>
+              {variants.length > 1 && (
+                <button
+                  type="button"
+                  className={styles.removeDateButton}
+                  aria-label={`Remove image variant ${index + 1}`}
+                  onClick={() =>
+                    setVariants((previousVariants) =>
+                      previousVariants.filter((_, variantIndex) => variantIndex !== index)
+                    )
+                  }
+                >
+                  Remove
+                </button>
+              )}
+            </div>
+          ))}
+          <button
+            type="button"
+            className={styles.addDateButton}
+            onClick={() =>
+              setVariants((previousVariants) => [
+                ...previousVariants,
+                { label: `Variant ${previousVariants.length + 1}`, fileName: "" },
+              ])
             }
-          />
-        </label>
+          >
+            Add another variant
+          </button>
+        </div>
+
+        <div className={styles.captureDates}>
+          <h3>Capture Days</h3>
+          {captureDates.map((date, index) => (
+            <div className={styles.captureDateRow} key={index}>
+              <label>
+                Day {index + 1}:
+                <input
+                  type="date"
+                  value={date}
+                  onChange={(event) =>
+                    setCaptureDates((previousDates) =>
+                      previousDates.map((previousDate, dateIndex) =>
+                        dateIndex === index ? event.target.value : previousDate
+                      )
+                    )
+                  }
+                />
+              </label>
+              {captureDates.length > 1 && (
+                <button
+                  type="button"
+                  className={styles.removeDateButton}
+                  aria-label={`Remove capture day ${index + 1}`}
+                  onClick={() =>
+                    setCaptureDates((previousDates) =>
+                      previousDates.filter((_, dateIndex) => dateIndex !== index)
+                    )
+                  }
+                >
+                  Remove
+                </button>
+              )}
+            </div>
+          ))}
+          <button
+            type="button"
+            className={styles.addDateButton}
+            onClick={() => setCaptureDates((previousDates) => [...previousDates, ""])}
+          >
+            Add another day
+          </button>
+        </div>
 
         <label>
           Object Type:
@@ -192,39 +329,54 @@ export default function AdminPhotoForm() {
 
       <div className={styles.formSection}>
         <h3>Integration Times</h3>
-        <div className={styles.integrationGrid}>
-          {filterTypes.map((filter) => (
-            <div key={filter} className={styles.integrationTime}>
-              <h4>{filter}</h4>
-              <input
-                type="number"
-                placeholder="Number of photos"
-                value={
-                  formData.integrationTimes?.[filter]?.numberOfPhotos || ""
-                }
-                onChange={(e) =>
-                  handleIntegrationTimeChange(
-                    filter,
-                    "numberOfPhotos",
-                    e.target.value
-                  )
-                }
-              />
-              <input
-                type="number"
-                placeholder="Seconds per photo"
-                value={formData.integrationTimes?.[filter]?.timePerPhoto || ""}
-                onChange={(e) =>
-                  handleIntegrationTimeChange(
-                    filter,
-                    "timePerPhoto",
-                    e.target.value
-                  )
-                }
-              />
+        {selectedIntegrationFilters.length === 0 ? (
+          <p>Select one or more filters to enter integration times.</p>
+        ) : (
+          Array.from(new Set(captureDates.filter(Boolean))).map((date) => (
+            <div className={styles.dateIntegrationGroup} key={date}>
+              <h4>{new Date(`${date}T00:00:00`).toLocaleDateString()}</h4>
+              <div className={styles.integrationGrid}>
+                {selectedIntegrationFilters.map((filter) => (
+                  <div key={filter} className={styles.integrationTime}>
+                    <h4>{filter}</h4>
+                    <input
+                      type="number"
+                      min="0"
+                      placeholder="Number of photos"
+                      value={
+                        integrationTimesByDate[date]?.[filter]?.numberOfPhotos || ""
+                      }
+                      onChange={(event) =>
+                        handleIntegrationTimeChange(
+                          date,
+                          filter,
+                          "numberOfPhotos",
+                          event.target.value
+                        )
+                      }
+                    />
+                    <input
+                      type="number"
+                      min="0"
+                      placeholder="Seconds per photo"
+                      value={
+                        integrationTimesByDate[date]?.[filter]?.timePerPhoto || ""
+                      }
+                      onChange={(event) =>
+                        handleIntegrationTimeChange(
+                          date,
+                          filter,
+                          "timePerPhoto",
+                          event.target.value
+                        )
+                      }
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
-          ))}
-        </div>
+          ))
+        )}
       </div>
 
       <div className={styles.formSection}>

@@ -1,12 +1,18 @@
-import { useEffect, useCallback } from "react";
+import { useEffect, useCallback, useState } from "react";
 import type { PhotoData, IntegrationTime } from "../types/PhotoData";
 import styles from "../styles/PhotoViewer.module.css";
+import { getTotalIntegrationSeconds } from "../utils/integrationTime";
 
 interface PhotoViewerProps {
   photos: PhotoData[];
   currentIndex: number;
   onClose: () => void;
   onNavigate: (index: number) => void;
+}
+
+interface IntegrationDetail {
+  date?: string;
+  time: IntegrationTime;
 }
 
 const PhotoViewer = ({
@@ -16,6 +22,11 @@ const PhotoViewer = ({
   onNavigate,
 }: PhotoViewerProps) => {
   const currentPhoto = photos[currentIndex];
+  const [selectedVariantIndex, setSelectedVariantIndex] = useState(0);
+  const imageVariants = currentPhoto.variants?.length
+    ? currentPhoto.variants
+    : [{ label: "Original", fileName: currentPhoto.fileName }];
+  const selectedVariant = imageVariants[selectedVariantIndex] ?? imageVariants[0];
 
   const handleKeyPress = useCallback(
     (event: KeyboardEvent) => {
@@ -47,7 +58,7 @@ const PhotoViewer = ({
   };
 
   const openFullResImage = () => {
-    window.open(`./images/${currentPhoto.fileName}`, "_blank");
+    window.open(`./images/${selectedVariant.fileName}`, "_blank");
   };
 
   const handleOverlayClick = () => {
@@ -69,12 +80,74 @@ const PhotoViewer = ({
     };
   }, [handleKeyPress]);
 
+  useEffect(() => {
+    setSelectedVariantIndex(0);
+  }, [currentPhoto.id]);
+
   const formatIntegrationTime = (time: IntegrationTime) => {
     const totalSeconds = time.numberOfPhotos * time.timePerPhoto;
     const hours = Math.floor(totalSeconds / 3600);
     const minutes = Math.floor((totalSeconds % 3600) / 60);
     return `${time.numberOfPhotos}x${time.timePerPhoto}s (${hours}h ${minutes}min)`;
   };
+  const captureDates = currentPhoto.dates?.length
+    ? currentPhoto.dates
+    : [currentPhoto.date];
+  const totalIntegrationSeconds = getTotalIntegrationSeconds(currentPhoto);
+  const formatDuration = (seconds: number) => {
+    const hours = Math.floor(seconds / 3600);
+    const minutes = Math.floor((seconds % 3600) / 60);
+    return `${hours}h ${minutes}min`;
+  };
+  const integrationTotalsByDate = currentPhoto.integrationTimesByDate
+    ? Array.from(
+      new Set([
+        ...captureDates,
+        ...Object.keys(currentPhoto.integrationTimesByDate),
+      ]),
+      (date) => ({
+        date,
+        totalSeconds: Object.values(
+          currentPhoto.integrationTimesByDate?.[date] ?? {}
+        ).reduce(
+          (total, time) =>
+            total + (time ? time.numberOfPhotos * time.timePerPhoto : 0),
+          0
+        ),
+      })
+    )
+    : currentPhoto.integrationTimes
+      ? [{ date: currentPhoto.date, totalSeconds: totalIntegrationSeconds }]
+      : [];
+  const integrationDetailsByFilter = new Map<string, IntegrationDetail[]>();
+
+  if (currentPhoto.integrationTimesByDate) {
+    Object.entries(currentPhoto.integrationTimesByDate).forEach(([date, times]) => {
+      Object.entries(times).forEach(([filter, time]) => {
+        if (!time) return;
+        const details = integrationDetailsByFilter.get(filter) ?? [];
+        details.push({ date, time });
+        integrationDetailsByFilter.set(filter, details);
+      });
+    });
+  } else {
+    Object.entries(currentPhoto.integrationTimes ?? {}).forEach(([filter, time]) => {
+      if (time) integrationDetailsByFilter.set(filter, [{ time }]);
+    });
+  }
+
+  const integrationSummaries = Array.from(
+    integrationDetailsByFilter,
+    ([filter, details]) => ({
+      filter,
+      details,
+      totalSeconds: details.reduce(
+        (total, detail) =>
+          total + detail.time.numberOfPhotos * detail.time.timePerPhoto,
+        0
+      ),
+    })
+  );
 
   return (
     <div className={styles.viewer}>
@@ -98,9 +171,8 @@ const PhotoViewer = ({
 
         <div className={styles.contentWrapper}>
           <button
-            className={`${styles.navButton} ${styles.navButtonLeft} ${
-              currentIndex <= 0 ? styles.hidden : ""
-            }`}
+            className={`${styles.navButton} ${styles.navButtonLeft} ${currentIndex <= 0 ? styles.hidden : ""
+              }`}
             onClick={(e) => {
               e.stopPropagation();
               if (currentIndex > 0) onNavigate(currentIndex - 1);
@@ -115,16 +187,15 @@ const PhotoViewer = ({
               onClick={(e) => e.stopPropagation()}
             >
               <img
-                src={`./images/${currentPhoto.fileName}`}
-                alt={currentPhoto.objectName}
+                src={`./images/${selectedVariant.fileName}`}
+                alt={`${currentPhoto.objectName} - ${selectedVariant.label}`}
               />
             </div>
 
           </div>
           <button
-            className={`${styles.navButton} ${styles.navButtonRight} ${
-              currentIndex >= photos.length - 1 ? styles.hidden : ""
-            }`}
+            className={`${styles.navButton} ${styles.navButtonRight} ${currentIndex >= photos.length - 1 ? styles.hidden : ""
+              }`}
             onClick={(e) => {
               e.stopPropagation();
               if (currentIndex < photos.length - 1)
@@ -136,20 +207,66 @@ const PhotoViewer = ({
 
           <div className={styles.photoDetails} onClick={(e) => e.stopPropagation()}>
             <h2>{currentPhoto.objectName}</h2>
-            <p>Date: {new Date(currentPhoto.date).toLocaleDateString()}</p>
+            {imageVariants.length > 1 && (
+              <label className={styles.variantSelector}>
+                Image variant
+                <select
+                  value={selectedVariantIndex}
+                  onChange={(event) =>
+                    setSelectedVariantIndex(Number(event.target.value))
+                  }
+                >
+                  {imageVariants.map((variant, index) => (
+                    <option key={`${variant.fileName}-${index}`} value={index}>
+                      {variant.label}
+                    </option>
+                  ))}
+                </select>
+              </label>
+            )}
+            <p>
+              {captureDates.length > 1 ? "Dates" : "Date"}: {captureDates
+                .map((date) => new Date(date).toLocaleDateString())
+                .join(", ")}
+            </p>
             <p>Filters: {currentPhoto.equipment.filters.join(", ")}</p>
 
-            {currentPhoto.integrationTimes ? (
+            {integrationSummaries.length > 0 ||
+              currentPhoto.integrationTimesByDate ||
+              currentPhoto.integrationTimes ? (
               <div className={styles.integrationTimes}>
                 <h3>Integration Times:</h3>
-                {Object.entries(currentPhoto.integrationTimes).map(
-                  ([filter, time]) =>
-                    time && (
-                      <p key={filter}>
-                        {filter}: {formatIntegrationTime(time)}
+                {integrationSummaries.map(({ filter, details, totalSeconds }) => (
+                  <details className={styles.integrationFilter} key={filter}>
+                    <summary>
+                      <span>{filter}</span>
+                      <strong>{formatDuration(totalSeconds)}</strong>
+                    </summary>
+                    <div className={styles.integrationBreakdown}>
+                      {details.map(({ date, time }, index) => (
+                        <p key={`${date ?? "legacy"}-${index}`}>
+                          {date
+                            ? `${new Date(`${date}T00:00:00`).toLocaleDateString()}: `
+                            : ""}
+                          {formatIntegrationTime(time)}
+                        </p>
+                      ))}
+                    </div>
+                  </details>
+                ))}
+                <details className={styles.integrationFilter}>
+                  <summary>
+                    <span>Total integration time</span>
+                    <strong>{formatDuration(totalIntegrationSeconds)}</strong>
+                  </summary>
+                  <div className={styles.integrationBreakdown}>
+                    {integrationTotalsByDate.map(({ date, totalSeconds }) => (
+                      <p key={date}>
+                        {new Date(`${date}T00:00:00`).toLocaleDateString()}: {formatDuration(totalSeconds)}
                       </p>
-                    )
-                )}
+                    ))}
+                  </div>
+                </details>
               </div>
             ) : null}
 
@@ -162,8 +279,8 @@ const PhotoViewer = ({
 
             <div className={styles.downloadSection}>
               <a
-                href={`./images/${currentPhoto.fileName}`}
-                download={currentPhoto.fileName}
+                href={`./images/${selectedVariant.fileName}`}
+                download={selectedVariant.fileName}
                 className={styles.downloadLink}
               >
                 Download Full Resolution
