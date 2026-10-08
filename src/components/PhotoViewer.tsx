@@ -1,6 +1,8 @@
 import { useEffect, useCallback } from "react";
 import type { PhotoData, IntegrationTime } from "../types/PhotoData";
+import VideoPlayer from "./VideoPlayer";
 import styles from "../styles/PhotoViewer.module.css";
+
 
 interface PhotoViewerProps {
   photos: PhotoData[];
@@ -98,9 +100,8 @@ const PhotoViewer = ({
 
         <div className={styles.contentWrapper}>
           <button
-            className={`${styles.navButton} ${styles.navButtonLeft} ${
-              currentIndex <= 0 ? styles.hidden : ""
-            }`}
+            className={`${styles.navButton} ${styles.navButtonLeft} ${currentIndex <= 0 ? styles.hidden : ""
+              }`}
             onClick={(e) => {
               e.stopPropagation();
               if (currentIndex > 0) onNavigate(currentIndex - 1);
@@ -114,17 +115,20 @@ const PhotoViewer = ({
               className={styles.photoContainer}
               onClick={(e) => e.stopPropagation()}
             >
-              <img
-                src={`./images/${currentPhoto.fileName}`}
-                alt={currentPhoto.objectName}
-              />
+              {/\.mp4$/i.test(currentPhoto.fileName) ? (
+                <VideoPlayer fileName={currentPhoto.fileName} />
+              ) : (
+                <img
+                  src={`./images/${currentPhoto.fileName}`}
+                  alt={currentPhoto.objectName}
+                />
+              )}
             </div>
 
           </div>
           <button
-            className={`${styles.navButton} ${styles.navButtonRight} ${
-              currentIndex >= photos.length - 1 ? styles.hidden : ""
-            }`}
+            className={`${styles.navButton} ${styles.navButtonRight} ${currentIndex >= photos.length - 1 ? styles.hidden : ""
+              }`}
             onClick={(e) => {
               e.stopPropagation();
               if (currentIndex < photos.length - 1)

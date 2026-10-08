@@ -166,6 +166,19 @@
     max-height: calc(100vh - 4rem);
 }
 
+.videoWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.videoWrapper video {
+    max-width: 100%;
+    max-height: calc(100vh - 4rem);
+    background: black;
+}
+
 .photoContainer img {
     max-width: 100%;
     max-height: calc(100vh - 4rem);

@@ -1453,6 +1453,23 @@
           "Blue"
         ]
       }
+    },
+    {
+      "id": "1788720315531",
+      "title": "Lunar Eclipse Timelapse",
+      "fileName": "eclipse_timelaps.mp4",
+      "objectName": "Lunar Eclipse Timelapse",
+      "date": "2026-08-26",
+      "type": "DSO",
+      "integrationTimes": {},
+      "equipment": {
+        "telescope": "Askar 71f",
+        "camera": "Cannon T7",
+        "mount": "Sky-Watcher WAVE 100i",
+        "filters": [
+          "OSC"
+        ]
+      }
     }
   ]
 }
