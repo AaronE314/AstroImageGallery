@@ -1554,6 +1554,79 @@
           "Ha"
         ]
       }
+    },
+    {
+      "id": "1792724669563",
+      "title": "LBN 576 - The Garlic Nebula",
+      "fileName": "LBN_576_garlic_nebula2.jpg",
+      "variants": [
+        {
+          "label": "Original",
+          "fileName": "LBN_576_garlic_nebula2.jpg"
+        }
+      ],
+      "objectName": "LBN 576 - The Garlic Nebula",
+      "date": "2026-10-19",
+      "dates": [
+        "2026-10-19",
+        "2026-10-20",
+        "2026-10-21"
+      ],
+      "type": "DSO",
+      "integrationTimesByDate": {
+        "2026-10-19": {
+          "Sii": {
+            "numberOfPhotos": 45,
+            "timePerPhoto": 180
+          },
+          "Ha": {
+            "numberOfPhotos": 44,
+            "timePerPhoto": 180
+          },
+          "Oiii": {
+            "numberOfPhotos": 44,
+            "timePerPhoto": 180
+          }
+        },
+        "2026-10-20": {
+          "Sii": {
+            "numberOfPhotos": 47,
+            "timePerPhoto": 180
+          },
+          "Ha": {
+            "numberOfPhotos": 46,
+            "timePerPhoto": 180
+          },
+          "Oiii": {
+            "numberOfPhotos": 46,
+            "timePerPhoto": 180
+          }
+        },
+        "2026-10-21": {
+          "Sii": {
+            "numberOfPhotos": 38,
+            "timePerPhoto": 180
+          },
+          "Ha": {
+            "numberOfPhotos": 39,
+            "timePerPhoto": 180
+          },
+          "Oiii": {
+            "numberOfPhotos": 78,
+            "timePerPhoto": 180
+          }
+        }
+      },
+      "equipment": {
+        "telescope": "Askar 71f",
+        "camera": "QHY MiniCam 8",
+        "mount": "Sky-Watcher WAVE 100i",
+        "filters": [
+          "Sii",
+          "Ha",
+          "Oiii"
+        ]
+      }
     }
   ]
 }
