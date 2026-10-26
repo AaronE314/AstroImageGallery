@@ -1627,6 +1627,64 @@
           "Oiii"
         ]
       }
+    },
+    {
+      "id": "1792986620494",
+      "title": "NGC 1499 - The California Nebula",
+      "fileName": "California_nebula_final.jpg",
+      "variants": [
+        {
+          "label": "Original",
+          "fileName": "California_nebula_final.jpg"
+        }
+      ],
+      "objectName": "NGC 1499 - The California Nebula",
+      "date": "2026-10-22",
+      "dates": [
+        "2026-10-22",
+        "2026-10-23"
+      ],
+      "type": "DSO",
+      "integrationTimesByDate": {
+        "2026-10-22": {
+          "Sii": {
+            "numberOfPhotos": 52,
+            "timePerPhoto": 180
+          },
+          "Ha": {
+            "numberOfPhotos": 52,
+            "timePerPhoto": 180
+          },
+          "Oiii": {
+            "numberOfPhotos": 51,
+            "timePerPhoto": 180
+          }
+        },
+        "2026-10-23": {
+          "Sii": {
+            "numberOfPhotos": 35,
+            "timePerPhoto": 180
+          },
+          "Ha": {
+            "numberOfPhotos": 35,
+            "timePerPhoto": 180
+          },
+          "Oiii": {
+            "numberOfPhotos": 103,
+            "timePerPhoto": 180
+          }
+        }
+      },
+      "equipment": {
+        "telescope": "Askar 71f",
+        "camera": "QHY MiniCam 8",
+        "mount": "Sky-Watcher WAVE 100i",
+        "filters": [
+          "Ha",
+          "Oiii",
+          "Sii"
+        ]
+      }
     }
   ]
 }
